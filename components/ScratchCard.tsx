@@ -137,7 +137,7 @@ export default function ScratchCard() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7 }}
-        className="mx-auto mt-12 w-[88%] max-w-sm"
+        className="mx-auto mt-12 w-[88%] max-w-sm transform-gpu will-change-[opacity,transform]"
       >
         <div
           ref={wrapRef}

@@ -32,6 +32,17 @@ html {
   background: #09090b;
 }
 
+/* Scroll-jank guards: keep compositing cheap on the 430px phone frame.
+   - Overscroll containment stops scroll chaining from thrashing ancestors.
+   - content-visibility on sections skips off-screen layout/paint. */
+main {
+  overscroll-behavior-y: contain;
+}
+
+section {
+  content-visibility: auto;
+}
+
 body {
   background: #2b0609;
   color: var(--color-ink-900);

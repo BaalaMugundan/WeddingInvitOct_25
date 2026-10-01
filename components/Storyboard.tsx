@@ -30,13 +30,13 @@ export default function Storyboard() {
         sub={STORY.sub}
       />
 
-      {/* Caricature Polaroid */}
+      {/* Caricature Polaroid — transform/opacity only (GPU-composited), no layout anim */}
       <motion.figure
         initial={{ opacity: 0, y: 60, rotate: -4 }}
         whileInView={{ opacity: 1, y: 0, rotate: -2 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative mx-auto mt-12 w-[86%] max-w-sm rounded-md bg-white p-3 pb-5 shadow-[0_18px_50px_rgba(62,10,15,0.25)]"
+        className="relative mx-auto mt-12 w-[86%] max-w-sm transform-gpu rounded-md bg-white p-3 pb-5 shadow-[0_18px_50px_rgba(62,10,15,0.25)] will-change-[opacity,transform]"
       >
         {/* washi-tape corners */}
         <span aria-hidden className="absolute -top-3 left-6 h-7 w-20 -rotate-6 bg-gold-300/70 shadow-sm" />
@@ -69,7 +69,7 @@ export default function Storyboard() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.65, delay: 0.05, ease: "easeOut" }}
-              className="relative"
+              className="relative transform-gpu will-change-[opacity,transform]"
             >
               <div
                 className={`rounded-md bg-white p-4 pb-6 shadow-[0_14px_36px_rgba(62,10,15,0.18)] transition-transform ${TILTS[i % TILTS.length]}`}

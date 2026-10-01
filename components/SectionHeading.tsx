@@ -16,13 +16,13 @@ interface Props {
  */
 export default function SectionHeading({ eyebrow, title, sub, dark }: Props) {
   return (
-    <div className="mx-auto max-w-xl px-6 text-center">
+    <div className="mx-auto max-w-xl px-6 text-center [content-visibility:auto] [contain-intrinsic-size:auto_320px]">
       <motion.p
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6 }}
-        className={`font-script text-3xl sm:text-4xl ${
+        className={`transform-gpu font-script text-3xl will-change-[opacity,transform] sm:text-4xl ${
           dark ? "text-gold-300" : "text-crimson-600"
         }`}
       >
@@ -33,7 +33,7 @@ export default function SectionHeading({ eyebrow, title, sub, dark }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, delay: 0.08 }}
-        className={`mt-2 font-display text-4xl font-semibold leading-tight sm:text-5xl ${
+        className={`mt-2 transform-gpu font-display text-4xl font-semibold leading-tight will-change-[opacity,transform] sm:text-5xl ${
           dark ? "text-cream-50" : "text-maroon-900"
         }`}
       >

@@ -60,8 +60,8 @@ export default function Itinerary() {
               initial={{ opacity: 0, x: -32 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.55, delay: i * 0.06 }}
-              className="relative flex gap-5"
+              transition={{ duration: 0.55, delay: Math.min(i, 3) * 0.06 }}
+              className="relative flex transform-gpu gap-5 will-change-[opacity,transform]"
             >
               {/* time medallion */}
               <div className="z-10 flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-full border border-gold-500 bg-maroon-800 text-center shadow-md">
@@ -91,7 +91,7 @@ export default function Itinerary() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-12 text-center"
+          className="mt-12 transform-gpu text-center will-change-[opacity,transform]"
         >
           <button
             type="button"
