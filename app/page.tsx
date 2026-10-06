@@ -7,7 +7,7 @@ import { FOOTER } from "@/lib/wedding";
 export default function Home() {
   return (
     <main className="min-h-svh w-full bg-cream-50 font-sans text-ink-900">
-      {/* 1 — pinned canvas image-sequence scrub */}
+      {/* 1 — full-viewport intro video (envelope reveal) */}
       <HeroCanvas />
       {/* 2 — polaroid storyboard with caricature */}
       <Storyboard />

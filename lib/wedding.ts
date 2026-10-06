@@ -34,35 +34,21 @@ export const WEDDING = {
   icsEnd: "20261025T140000",
   caricatureSrc: "/caricature.png",
   caricatureAlt: "Caricature illustration of R Baala Mugundan & Dr M.Sowmiya",
+  dateDisplay: "25 October 2026",
+  venueShort: "P.V.K Mahal, Dindigul",
 } as const;
 
-// --- 1. Hero (canvas image-sequence scrub) ---
+// --- 1. Hero (video intro) ---
 export const HERO = {
   title: "The Wedding Invitation",
+  eyebrow: "The Wedding Invitation",
+  tagline: "Two Souls, Bound by Tradition and Eternal Love",
   scrollHint: "Scroll down to unseal our invitation",
   scrollIcon: "↓",
   finaleHint: "An eternal union begins",
   loadingLabel: "Preparing celebration...",
   frameAlt: "Envelope opening sequence frame",
 } as const;
-
-/**
- * Image-sequence config for the Hero canvas scrub.
- * Frames live in `public/hero-sequence/` as frame_001.webp … frame_240.webp.
- * Adjust `frameCount` if you add/remove frames — everything else follows.
- */
-export const HERO_SEQUENCE = {
-  dir: "/hero-sequence",
-  frameCount: 240,
-  prefix: "frame_",
-  padLength: 3,
-  extension: "webp",
-} as const;
-
-export function heroFrameUrl(index: number): string {
-  const frameNum = String(index + 1).padStart(HERO_SEQUENCE.padLength, "0");
-  return `${HERO_SEQUENCE.dir}/${HERO_SEQUENCE.prefix}${frameNum}.${HERO_SEQUENCE.extension}`;
-}
 
 // --- 2. Storyboard ---
 export const STORY = {
